@@ -1,0 +1,18 @@
+2a. 
+    pthread_mutex_t mlock;
+    pthread_mutex_init(&mlock, NULL);
+    pthread_cond_t cond;
+    pthread_cond_init(&cond, NULL);
+
+2b. Only one of the blocked threads will be unblocked.
+3a. There is a thread for the waiter and a thread for each customer in the simulation.
+3b. One customer is served by the waiter at a time.
+3c. 1. The customer must become ready for seating by calling ready_to_seat_customer
+    2. The waiter must seat the customer by calling seat_customer
+    3. The customer orders a dish by calling order_placed_by_customer
+    4. The waiter brings the order to the customer by calling bring_food_to_customer
+    5. The customer informs the waiter that it is done by calling service_completed_for_customer
+4a. "Customer 0 placed an order but the table is empty" and "Waiter served dish but order was not taken!"
+4b. No, you do not get the same violation every time.
+
+
